@@ -1,0 +1,9 @@
+#include "halGeneral.h"
+#include "halPMM.h"
+#include "halWdt.h"
+
+void halInit(){
+    halWdtInit();
+    HAL_PMM_Init();
+    __enable_interrupt();
+}

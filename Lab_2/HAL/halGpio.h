@@ -1,0 +1,17 @@
+#ifndef HALGPIO_H
+#define HALGPIO_H
+
+// ##### Port 1 #####
+#define RPM_SENSOR       BIT3
+#define RPM_SENSOR_DIR   BIT4
+#define I2C_INT_MOTION   BIT5
+#define START_BUTTON     BIT6
+#define STOP_BUTTON      BIT7
+#define LCD_BL           BIT0
+
+typedef struct {
+    unsigned char active; // TRUE = 1 / FALSE = 0
+    unsigned char button; // Button number
+} ButtonCom;
+
+#endif

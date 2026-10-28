@@ -1,0 +1,14 @@
+#include <msp430.h>
+#include "halGeneral.h"
+#include "halPMM.h"
+#include "halGpio.h"
+#include "halWdt.c"
+
+volatile ButtonCom CCButton;
+
+void hal_Init(){
+    __enable_interrupt();
+    halWdtInit();
+    HAL_PMM_Init();
+    halGpioInit();
+}

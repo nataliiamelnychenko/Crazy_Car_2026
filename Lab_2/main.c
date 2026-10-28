@@ -1,0 +1,55 @@
+#include <msp430.h> 
+#include "halGeneral.h"
+#include "halGpio.h"
+
+extern volatile ButtonCom CCButton;
+
+void main(void)
+{
+    halInit();
+
+    while (1)
+    {
+        if (CCButton.active == 1)
+        {
+            if (CCButton.button == 6)
+            {
+                P8OUT |= BIT0;
+            }
+            else if (CCButton.button == 7)
+            {
+                P8OUT &= ~BIT0;
+            }
+
+            CCButton.active = 0; //Flag löschen
+        }
+    }
+
+	//WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
+	
+	//return 0;
+}
+
+#pragma vector=PORT1_VECTOR
+__interrupt void Port_1(void)
+{
+    // Überprüfen, ob das erwartete Flag gesetzt ist
+    if (P1IFG & START_BUTTON)
+    {
+        // → gewünschte Reaktion (z. B. Flag setzen, Aktion auslösen)
+        CCButton.active=1;
+        CCButton.button=6;
+
+        // Interrupt-Flag löschen
+        P1IFG &= ~START_BUTTON;
+    }
+
+    if (P1IFG & STOP_BUTTON)
+        {
+
+        CCButton.active=0;
+        CCButton.button=7;
+
+        P1IFG &= ~STOP_BUTTON;
+        }
+}

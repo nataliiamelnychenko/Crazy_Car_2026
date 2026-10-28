@@ -1,0 +1,10 @@
+#include "halGeneral.h"
+#include "halPmm.h"
+
+volatile ButtonCom CCButton;
+
+void halInit(){
+    halWdtInit();
+    HAL_PMM_Init();
+    __enable_interrupt();
+}

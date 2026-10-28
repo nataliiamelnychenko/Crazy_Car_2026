@@ -1,0 +1,7 @@
+#include "halGeneral.h"
+#include "halPmm.h"
+
+void halInit(){
+    halWdtInit();
+    HAL_PMM_Init();
+}

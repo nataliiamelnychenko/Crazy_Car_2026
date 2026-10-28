@@ -1,0 +1,52 @@
+#include <msp430.h>
+#include <HAL/halGpio.h>
+
+void halGpioInit(void) {
+
+
+//Richtung aller beschalteten Pins gemäß ihrer Funktion setzen
+P1DIR &= ~(RPM_SENSOR | RPM_SENSOR_DIR | START_BUTTON | STOP_BUTTON);
+P1DIR |= I2C_INT_MOTION;
+
+
+//Ausgänge initial mit definiertem Pegel belegen
+P1OUT &= ~I2C_INT_MOTION;
+
+
+//Pull-Ups/-Downs für Eingänge aktivieren:
+P1REN |= (START_BUTTON | STOP_BUTTON);
+P1OUT |= (START_BUTTON | STOP_BUTTON);
+
+
+//Unbenutzte Pins als digitale Ausgänge mit Low-Pegel konfigurieren (mit Ground verbunden):
+P1DIR |= (BIT0 | BIT1 | BIT2);
+P1OUT &= ~(BIT0 | BIT1 | BIT2);
+
+//Konfiguration des Port 1 Interrupts (P1.3)
+//P1DIR &= ~BIT3;      // P1.3 als Eingang
+//P1REN |= BIT3;       // Pull-Up/Down aktivieren
+//P1OUT |= BIT3;       // Pull-Up auswählen
+//P1IES &= ~BIT3;      // Steigende Flanke
+//P1IFG &= ~BIT3;      // Interrupt-Flag löschen
+//P1IE  |= BIT3;       // Interrupt aktivieren
+
+//Activierung Interrupts für Start- und Stopptaste:
+P1IES |= (START_BUTTON | STOP_BUTTON);
+P1IFG &= ~(START_BUTTON | STOP_BUTTON);
+P1IE |= (START_BUTTON | STOP_BUTTON);
+
+#pragma vector=PORT1_VECTOR
+__interrupt void Port_1(void)
+{
+    switch (P1IV)
+    {
+        case P1IV_P1IFG3:           // P1.3
+            break;
+
+        default:
+            break;
+    }
+}
+
+}
+
