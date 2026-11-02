@@ -4,6 +4,7 @@
     <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.MSP430F5335.ccxml.TI MSP430 USB1/MSP430" value="${build_artifact:Lab_2}"/>
     <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.MSP430F5335.ccxml.TI MSP430 USB1/MSP430" value="Lab_2"/>
     <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:Lab_2}"/>
+    <stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430F5335.ccxml.TI MSP430 USB1/MSP430" value="${build_artifact:Lab_2}"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/Lab_2"/>
     </listAttribute>

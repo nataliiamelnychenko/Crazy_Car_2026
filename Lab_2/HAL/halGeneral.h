@@ -1,5 +1,5 @@
 #ifndef HALGENERAL_H
-#define HAL_GENERAL_H
+#define HALGENERAL_H
 
 void halInit();
 

@@ -6,6 +6,8 @@ extern volatile ButtonCom CCButton;
 
 void main(void)
 {
+    WDTCTL = WDTPW | WDTHOLD; // stop watchdog timer
+
     halInit();
 
     while (1)
@@ -25,9 +27,7 @@ void main(void)
         }
     }
 
-	//WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
-	
-	//return 0;
+    //return 0;
 }
 
 #pragma vector=PORT1_VECTOR
@@ -47,7 +47,7 @@ __interrupt void Port_1(void)
     if (P1IFG & STOP_BUTTON)
         {
 
-        CCButton.active=0;
+        CCButton.active=1;
         CCButton.button=7;
 
         P1IFG &= ~STOP_BUTTON;

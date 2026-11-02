@@ -6,7 +6,9 @@
 volatile ButtonCom CCButton;
 
 void halInit(){
+
     halWdtInit();
     HAL_PMM_Init();
+    halGpioInit();
     __enable_interrupt();
 }
