@@ -2,7 +2,7 @@
 #include "halGeneral.h"
 #include "halGpio.h"
 
-//#define RUN_TESTS                   // auskommentieren für den Normalbetrieb
+#define RUN_TESTS                   // auskommentieren für den Normalbetrieb
 
 #ifdef RUN_TESTS
 #include "testHalGeneral.h"

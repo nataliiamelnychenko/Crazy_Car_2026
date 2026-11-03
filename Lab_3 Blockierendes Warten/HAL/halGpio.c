@@ -17,7 +17,7 @@ P1OUT &= ~I2C_INT_MOTION;
 
 //Pull-Ups/-Downs für Eingänge aktivieren:
 P1REN |= (START_BUTTON | STOP_BUTTON);//aktivieren
-P1OUT |= (START_BUTTON | STOP_BUTTON);//auswählen - 1 für Steigende Flanke
+P1OUT |= (START_BUTTON | STOP_BUTTON);//auswählen 1
 
 
 //Unbenutzte Pins als digitale Ausgänge(P1DIR) mit Low-Pegel(P1OUT) konfigurieren (mit Ground verbunden):
@@ -33,12 +33,10 @@ P1IE |= (START_BUTTON | STOP_BUTTON); //Interrupt aktivieren
 P8DIR |= (BIT0 | BIT1 | BIT2 | BIT3 | BIT4 | BIT5 | BIT6 | BIT7); //Ausgang (1)
 P8OUT &= ~(BIT0 | BIT1 | BIT2 | BIT3 | BIT4 | BIT5 | BIT6 | BIT7); //deaktiviert(0)
 
-
 //Konfigurierung XT2-Pins:
 P7SEL |= (BIT2 | BIT3); //XT2IN,XT2OUT in crystal mode einschalten
 
 //SMCLK konfigurieren:
 P3DIR |= BIT4;
 P3SEL |= BIT4;
-
 }

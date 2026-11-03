@@ -9,6 +9,7 @@
 #include "unity.h"
 #include "testHalGeneral.h"
 #include "testHalGPIO.h"
+#include "testHalTimerB0.h"
 
 void setUp(void)    { }
 
@@ -23,6 +24,7 @@ void halInitTest(void)
     UNITY_BEGIN();
 
     testHalGPIORun();
+    testHalTimerB0Run();
 
     UNITY_END();
 }

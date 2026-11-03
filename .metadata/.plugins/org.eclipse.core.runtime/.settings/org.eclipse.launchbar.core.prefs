@@ -2,7 +2,7 @@ LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
 activeLaunchTarget=null\:---
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Car_Project 2 Digitale Ein Ausgabe,org.eclipse.launchbar.core.descriptorType.default\:Car_Project 2 Digitale Ein Ausgabe probe,org.eclipse.launchbar.core.descriptorType.default\:Car_Project 2,org.eclipse.launchbar.core.descriptorType.default\:Car_Project 3 Clock System, TimerB0,org.eclipse.launchbar.core.descriptorType.default\:Car_Project 3,org.eclipse.launchbar.core.descriptorType.default\:Car_Project,org.eclipse.launchbar.core.descriptorType.default\:Car_Project 4 PWM-Erzeugung, Aktorik,org.eclipse.launchbar.core.descriptorType.default\:Car_Project 4 PWM-Erzeugung, Aktorik2,org.eclipse.launchbar.core.descriptorType.default\:Lab_1,org.eclipse.launchbar.core.descriptorType.default\:Lab_2+tests,org.eclipse.launchbar.core.descriptorType.default\:Lab_2
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Lab_1,org.eclipse.launchbar.core.descriptorType.default\:Lab_2+tests,org.eclipse.launchbar.core.descriptorType.default\:Lab_2,org.eclipse.launchbar.core.descriptorType.default\:Lab_3,org.eclipse.launchbar.core.descriptorType.default\:Lab_3 Blockierendes Warten
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Car_Project\ 2\ Digitale\ Ein\ Ausgabe\ probe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Car_Project\ 2\ Digitale\ Ein\ Ausgabe\ probe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
