@@ -1,7 +1,7 @@
 #include <msp430.h>
 #include "halUCS.h"
 
-void halUCSInit(void)//Der Oszillator XT2 wird aktiviert, Fehlerflags werden gelöscht, und die Systemtakte (MCLK, SMCLK) werden auf die Quarzquelle umgelegt. Der korrekte Betrieb wird durch Abfrage der Fault-Flags abgesichert.
+void halUCSInit(void)//Oszi XT2 aktiviert, Fehlerflags gelöscht, Systemtakte MCLK, SMCLK auf die Quarzquelle umgelegt, korrekte Betrieb durch Abfrage der Fault-Flags abgesichert.
     {
         UCSCTL6 &= ~XT2OFF;             // XT2 einschalten
         UCSCTL3 |= SELREF_2;            // FLL Referenz = REFO
